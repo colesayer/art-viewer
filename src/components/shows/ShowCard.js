@@ -9,7 +9,7 @@ class ShowCard extends Component{
     const textArray = this.props.show.text.split("\n")
     const formattedShowText = textArray.map((text, idx) => <p key={idx}>{text}</p>)
 
-    // const imageItems = this.props.show.images.map((image, idx) => <img src={require(`${image}`)} alt={idx} />)
+    const imageItems = this.props.show.images.map((image, idx) => <img src={require(`${image}`)} alt={idx} />)
     // <div>
     //   {imageItems}
     // </div>
@@ -20,7 +20,7 @@ class ShowCard extends Component{
         <h3>{this.props.show.location} - {this.props.show.date}</h3>
         {formattedShowText}
         <div>
-          <ImageList images={this.props.show.images}/>
+          <ImageList imageIds={this.props.show.images} images={imageItems} />
         </div>
       </div>
     )

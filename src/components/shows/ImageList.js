@@ -17,7 +17,7 @@ class ImageList extends Component{
 
   render(){
     console.log("in ImageList Render: ", this.state.artwork)
-    const imageItems = this.props.images.map((image, idx) => <li style={{display: "inline"}} onMouseOver={this.handleMouseOver}> | <strong> {idx + 1} </strong> | </li>)
+    const imageItems = this.props.imageIds.map((image, idx) => <li style={{display: "inline"}} onMouseOver={this.handleMouseOver}> | <strong> {idx + 1} </strong> | </li>)
     return(
       <div>
         <ul>
