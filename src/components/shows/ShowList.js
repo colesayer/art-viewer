@@ -18,10 +18,7 @@ class ShowList extends Component{
 
 
   render(){
-    console.log("in ShowList render:", this.state.show)
-
     const showItems = this.state.show.map((show,idx) => <ShowCard key={idx} show={show}/>)
-
     const showList = this.props.shows.map((show, idx) => {
       return <li onClick={this.handleClick} key={idx}> {show.title} </li>
     })

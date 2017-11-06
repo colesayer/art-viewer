@@ -13,7 +13,8 @@ class ShowContainer extends Component{
 
   componentDidMount(){
     this.setState({
-      shows: fetchShowInfo()
+      shows: fetchShowInfo(),
+      searchError: "",
     })
   }
 
@@ -21,16 +22,18 @@ class ShowContainer extends Component{
 
   handleSubmit = (event) => {
     const shows = this.state.shows
+    this.setState({searchError: ""})
     let showArray = []
 
     for(const ele of shows){
       if(ele.title.toLowerCase() === event.toLowerCase()){
         showArray[0] = ele
-        console.log("in for", showArray)
+      } else {
+        this.setState({searchError: "Not an existing show."})
       }
 
       if(showArray.length >= 1){
-        this.setState({shows: showArray})
+        this.setState({shows: showArray, searchError: ""})
       }
 
     }
@@ -41,7 +44,7 @@ class ShowContainer extends Component{
     return(
       <div>
         <ShowList shows={this.state.shows} />
-        <ShowForm resetValue={this.setShows} searchShows={this.handleSubmit}/>
+        <ShowForm resetValue={this.setShows} searchShows={this.handleSubmit} searchError={this.state.searchError}/>
       </div>
     )
   }
