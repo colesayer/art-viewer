@@ -1,0 +1,17 @@
+div.Nav ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+div.Nav li {
+  float: right;
+  display: inline;
+  padding: 8px;
+}
+
+div.Nav h1 {
+  float: left;
+  padding: 0;
+  margin: 0;
+}
