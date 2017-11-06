@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { fetchShowInfo } from '../../services/showinfo'
+ import React, { Component } from 'react';
+import { fetchShowInfo } from '../../Services/showinfo'
 import ShowList from './ShowList'
 import ShowForm from './ShowForm'
 import './ShowContainer.css'
@@ -40,8 +40,8 @@ class ShowContainer extends Component{
     console.log("in render: ", this.state.shows)
     return(
       <div>
-        <ShowForm resetValue={this.setShows} searchShows={this.handleSubmit}/>
         <ShowList shows={this.state.shows} />
+        <ShowForm resetValue={this.setShows} searchShows={this.handleSubmit}/>
       </div>
     )
   }
